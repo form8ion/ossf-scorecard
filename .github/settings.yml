@@ -1,0 +1,6 @@
+_extends: .github
+repository:
+  name: ossf-scorecard
+  description: form8ion plugin for configuring the OpenSSF Scorecard for a project
+  homepage: https://npm.im/@form8ion/ossf-scorecard
+  private: false
