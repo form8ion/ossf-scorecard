@@ -11,3 +11,7 @@ Then('the score badge is added to the status zone', async function () {
     }
   );
 });
+
+Then('no badge is added', async function () {
+  assert.isUndefined(this.result.badges);
+});

@@ -4,11 +4,11 @@ import any from '@travi/any';
 import scaffold from './scaffolder.js';
 
 describe('scaffolder', () => {
-  it('should return scaffolding results', async () => {
-    const owner = any.word();
-    const name = any.word();
+  const owner = any.word();
+  const name = any.word();
 
-    expect(await scaffold({vcs: {owner, name}}))
+  it('should return scaffolding results', async () => {
+    expect(await scaffold({vcs: {owner, name, host: 'github'}}))
       .toEqual({
         badges: {
           status: {
@@ -20,5 +20,9 @@ describe('scaffolder', () => {
           }
         }
       });
+  });
+
+  it('should not define a badge if the vcs host is not github', async () => {
+    expect((await scaffold({vcs: {owner, name, host: any.word()}})).badges).toBeUndefined();
   });
 });
