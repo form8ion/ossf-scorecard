@@ -14,6 +14,8 @@ form8ion plugin for configuring the OpenSSF Scorecard for a project
 * [Usage](#usage)
   * [Installation](#installation)
   * [Example](#example)
+    * [Import](#import)
+    * [Execute](#execute)
 * [Contributing](#contributing)
   * [Dependencies](#dependencies)
   * [Verification](#verification)
@@ -46,7 +48,7 @@ import {scaffold} from '@form8ion/ossf-scorecard';
 
 ```javascript
 (async () => {
-  await scaffold({projectRoot: process.cwd()});
+  await scaffold({projectRoot: process.cwd(), vcs: {owner: 'foo', name: 'bar', host: 'github'}});
 })();
 ```
 
