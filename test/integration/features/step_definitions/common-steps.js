@@ -8,10 +8,19 @@ import any from '@travi/any';
 const __dirname = dirname(fileURLToPath(import.meta.url));          // eslint-disable-line no-underscore-dangle
 const stubbedNodeModules = stubbedFs.load(resolve(__dirname, '..', '..', '..', '..', 'node_modules'));
 
-Before(function () {
+let scaffold;
+
+Before(async function () {
   this.projectRoot = process.cwd();
   this.vcsOwner = any.word();
   this.vcsName = any.word();
+
+  // eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
+  ({scaffold} = await import('@form8ion/ossf-scorecard'));
+
+  stubbedFs({
+    node_modules: stubbedNodeModules
+  });
 });
 
 After(function () {
@@ -19,13 +28,6 @@ After(function () {
 });
 
 When('the project is scaffolded', async function () {
-  // eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
-  const {scaffold} = await import('@form8ion/ossf-scorecard');
-
-  stubbedFs({
-    node_modules: stubbedNodeModules
-  });
-
   this.result = await scaffold({
     projectRoot: this.projectRoot,
     vcs: {host: this.vcsHost, name: this.vcsName, owner: this.vcsOwner}

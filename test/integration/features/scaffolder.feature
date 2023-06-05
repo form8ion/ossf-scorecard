@@ -4,6 +4,7 @@ Feature: Scaffolder
     Given the project is hosted on "GitHub"
     When the project is scaffolded
     Then the score badge is added to the status zone
+    And the workflow is defined
 
   Scenario: Scaffold a project hosted on a different VCS host
     Given the project is hosted on "Other"

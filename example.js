@@ -4,7 +4,7 @@ import stubbedFs from 'mock-fs';
 import {scaffold} from './lib/index.mjs';
 
 // remark-usage-ignore-next
-stubbedFs();
+stubbedFs({'.github': {workflows: {}}});
 
 // #### Execute
 

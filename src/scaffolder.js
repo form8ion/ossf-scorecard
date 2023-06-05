@@ -1,4 +1,9 @@
-export default function ({vcs: {owner, name, host}}) {
+import {promises as fs} from 'node:fs';
+import {dump} from 'js-yaml';
+
+export default async function ({projectRoot, vcs: {owner, name, host}}) {
+  await fs.writeFile(`${projectRoot}/.github/workflows/scorecard.yml`, dump({}));
+
   return {
     ...'github' === host && {
       badges: {
