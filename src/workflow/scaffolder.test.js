@@ -1,5 +1,6 @@
 import {promises as fs} from 'node:fs';
 import jsYaml from 'js-yaml';
+import mkdir from 'make-dir';
 
 import {afterEach, expect, describe, it, vi} from 'vitest';
 import any from '@travi/any';
@@ -9,6 +10,7 @@ import scaffold from './scaffolder.js';
 
 vi.mock('node:fs');
 vi.mock('js-yaml');
+vi.mock('make-dir');
 
 describe('workflow scaffolder', () => {
   const projectRoot = any.string();
@@ -19,7 +21,9 @@ describe('workflow scaffolder', () => {
 
   it('should scaffold the scorecard workflow', async () => {
     const dumpedYaml = any.string();
+    const pathToCreatedWorkflowsDirectory = any.string();
 
+    when(mkdir).calledWith(`${projectRoot}/.github/workflows`).mockResolvedValue(pathToCreatedWorkflowsDirectory);
     when(jsYaml.dump)
       .calledWith({
         name: 'OpenSSF Scorecard',
@@ -73,6 +77,6 @@ describe('workflow scaffolder', () => {
 
     await scaffold({projectRoot});
 
-    expect(fs.writeFile).toHaveBeenCalledWith(`${projectRoot}/.github/workflows/scorecard.yml`, dumpedYaml);
+    expect(fs.writeFile).toHaveBeenCalledWith(`${pathToCreatedWorkflowsDirectory}/scorecard.yml`, dumpedYaml);
   });
 });

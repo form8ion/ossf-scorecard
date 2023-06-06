@@ -1,7 +1,16 @@
 import {fileExists} from '@form8ion/core';
+import mkdir from 'make-dir';
 
-import {Then} from '@cucumber/cucumber';
+import {Given, Then} from '@cucumber/cucumber';
 import {assert} from 'chai';
+
+Given('Actions workflows exist', async function () {
+  await mkdir(`${this.projectRoot}/.github/workflows`);
+});
+
+Given('no Actions workflows exist', async function () {
+  return undefined;
+});
 
 Then('the workflow is defined', async function () {
   assert.isTrue(await fileExists(`${this.projectRoot}/.github/workflows/scorecard.yml`));

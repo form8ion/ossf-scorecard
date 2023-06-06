@@ -1,9 +1,10 @@
 import {promises as fs} from 'node:fs';
 import {dump} from 'js-yaml';
+import mkdir from 'make-dir';
 
 export default async function ({projectRoot}) {
   await fs.writeFile(
-    `${projectRoot}/.github/workflows/scorecard.yml`,
+    `${await mkdir(`${projectRoot}/.github/workflows`)}/scorecard.yml`,
     dump({
       name: 'OpenSSF Scorecard',
       on: {
