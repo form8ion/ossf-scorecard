@@ -10,3 +10,4 @@ Feature: Scaffolder
     Given the project is hosted on "Other"
     When the project is scaffolded
     Then no badge is added
+    And the workflow is not defined

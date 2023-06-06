@@ -20,7 +20,7 @@ describe('scaffolder', () => {
     vi.clearAllMocks();
   });
 
-  it('should return scaffolding results', async () => {
+  it('should create the scorecard workflow and define the badge if the vcs host is github', async () => {
     when(jsYaml.dump)
       .calledWith({
         name: 'OpenSSF Scorecard',
@@ -87,7 +87,8 @@ describe('scaffolder', () => {
     expect(fs.writeFile).toHaveBeenCalledWith(`${projectRoot}/.github/workflows/scorecard.yml`, dumpedYaml);
   });
 
-  it('should not define a badge if the vcs host is not github', async () => {
+  it('should not define a scorecard workflow or a badge if the vcs host is not github', async () => {
     expect((await scaffold({vcs: {owner, name, host: any.word()}})).badges).toBeUndefined();
+    expect(fs.writeFile).not.toHaveBeenCalled();
   });
 });
