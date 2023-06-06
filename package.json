@@ -52,6 +52,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "9.1.2",
     "@form8ion/commitlint-config": "1.0.51",
+    "@form8ion/core": "2.0.0",
     "@form8ion/eslint-config": "5.0.32",
     "@form8ion/eslint-config-cucumber": "1.4.1",
     "@form8ion/remark-lint-preset": "5.0.9",
@@ -75,5 +76,9 @@
     "rollup": "3.23.0",
     "rollup-plugin-auto-external": "2.0.0",
     "vitest": "0.31.3"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "make-dir": "^3.1.0"
   }
 }
