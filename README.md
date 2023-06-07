@@ -6,6 +6,7 @@ form8ion plugin for configuring the OpenSSF Scorecard for a project
 
 [![Node CI Workflow Status][github-actions-ci-badge]][github-actions-ci-link]
 [![Codecov][coverage-badge]][coverage-link]
+[![OpenSSF Scorecard][ossfScorecard-badge]][ossfScorecard-link]
 
 <!--status-badges end -->
 
@@ -116,3 +117,7 @@ $ npm test
 [runkit-link]: https://npm.runkit.com/@form8ion/ossf-scorecard
 
 [runkit-badge]: https://badge.runkitcdn.com/@form8ion/ossf-scorecard.svg
+
+[ossfScorecard-link]: https://api.securityscorecards.dev/projects/github.com/form8ion/ossf-scorecard
+
+[ossfScorecard-badge]: https://api.securityscorecards.dev/projects/github.com/form8ion/ossf-scorecard/badge
