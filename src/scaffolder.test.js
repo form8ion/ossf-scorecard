@@ -22,7 +22,7 @@ describe('scaffolder', () => {
           status: {
             ossfScorecard: {
               img: `https://api.securityscorecards.dev/projects/github.com/${owner}/${name}/badge`,
-              link: `https://api.securityscorecards.dev/projects/github.com/${owner}/${name}`,
+              link: `https://securityscorecards.dev/viewer/?uri=github.com/${owner}/${name}`,
               text: 'OpenSSF Scorecard'
             }
           }

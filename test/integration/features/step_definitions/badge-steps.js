@@ -6,7 +6,7 @@ Then('the score badge is added to the status zone', async function () {
     this.result.badges.status.ossfScorecard,
     {
       img: `https://api.securityscorecards.dev/projects/github.com/${this.vcsOwner}/${this.vcsName}/badge`,
-      link: `https://api.securityscorecards.dev/projects/github.com/${this.vcsOwner}/${this.vcsName}`,
+      link: `https://securityscorecards.dev/viewer/?uri=github.com/${this.vcsOwner}/${this.vcsName}`,
       text: 'OpenSSF Scorecard'
     }
   );
