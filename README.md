@@ -118,6 +118,6 @@ $ npm test
 
 [runkit-badge]: https://badge.runkitcdn.com/@form8ion/ossf-scorecard.svg
 
-[ossfScorecard-link]: https://api.securityscorecards.dev/projects/github.com/form8ion/ossf-scorecard
+[ossfScorecard-link]: https://securityscorecards.dev/viewer/?uri=github.com/form8ion/ossf-scorecard
 
 [ossfScorecard-badge]: https://api.securityscorecards.dev/projects/github.com/form8ion/ossf-scorecard/badge
