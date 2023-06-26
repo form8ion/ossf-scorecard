@@ -48,7 +48,7 @@ describe('workflow scaffolder', () => {
               },
               {
                 name: 'Run analysis',
-                uses: 'ossf/scorecard-action@v2.1.2',
+                uses: 'ossf/scorecard-action@v2.2.0',
                 with: {
                   results_file: 'results.sarif',
                   results_format: 'sarif',
