@@ -7,7 +7,7 @@
     {
       "description": "Update action versions in scaffolded workflow",
       "fileMatch": ["^\\src/workflow/.+\\.js$"],
-      "matchStrings": ["\\uses: '(?<depName>.*?)@(?<currentValue>.*?)'"],
+      "matchStrings": ["\\suses: '(?<depName>.*?)@(?<currentValue>.*?)'"],
       "datasourceTemplate": "action"
     }
   ]
