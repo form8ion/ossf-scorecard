@@ -49,6 +49,10 @@
     "access": "public",
     "provenance": true
   },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "make-dir": "^4.0.0"
+  },
   "devDependencies": {
     "@cucumber/cucumber": "9.2.0",
     "@form8ion/commitlint-config": "1.0.52",
@@ -76,9 +80,5 @@
     "rollup": "3.25.3",
     "rollup-plugin-auto-external": "2.0.0",
     "vitest": "0.32.2"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.0",
-    "make-dir": "^4.0.0"
   }
 }
