@@ -6,7 +6,7 @@
   "regexManagers": [
     {
       "description": "Update action versions in scaffolded workflow",
-      "fileMatch": ["^\\src/workflow/.+\\.js$"],
+      "fileMatch": ["^src/workflow/.+\\.js$"],
       "matchStrings": ["\\suses: '(?<depName>.*?)@(?<currentValue>.*?)'"],
       "datasourceTemplate": "action"
     }
