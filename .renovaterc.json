@@ -5,15 +5,26 @@
   ],
   "regexManagers": [
     {
+      "customType": "regex",
       "description": "Update action versions in scaffolded workflow",
-      "fileMatch": ["^src/workflow/.+\\.js$"],
-      "matchStrings": ["\\suses: '(?<depName>.*?)@(?<currentValue>.*?)'"],
+      "fileMatch": [
+        "^src/workflow/.+\\.js$"
+      ],
+      "matchStrings": [
+        "\\suses: '(?<depName>.*?)@(?<currentValue>.*?)'"
+      ],
       "datasourceTemplate": "github-tags"
     }
   ],
-  "packageRules": [{
-    "semanticCommitType": "fix",
-    "matchManagers": ["regex"],
-    "matchDepTypes": ["github-actions"]
-  }]
+  "packageRules": [
+    {
+      "semanticCommitType": "fix",
+      "matchManagers": [
+        "regex"
+      ],
+      "matchDepTypes": [
+        "github-actions"
+      ]
+    }
+  ]
 }
