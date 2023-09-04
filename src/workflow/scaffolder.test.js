@@ -43,7 +43,7 @@ describe('workflow scaffolder', () => {
             steps: [
               {
                 name: 'Checkout code',
-                uses: 'actions/checkout@v3.6.0',
+                uses: 'actions/checkout@v4',
                 with: {'persist-credentials': false}
               },
               {
