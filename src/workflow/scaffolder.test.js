@@ -57,7 +57,7 @@ describe('workflow scaffolder', () => {
               },
               {
                 name: 'Upload artifact',
-                uses: 'actions/upload-artifact@v3.1.2',
+                uses: 'actions/upload-artifact@v3.1.3',
                 with: {
                   name: 'SARIF file',
                   path: 'results.sarif',
