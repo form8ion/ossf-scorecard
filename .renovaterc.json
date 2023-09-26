@@ -3,7 +3,7 @@
   "extends": [
     "github>form8ion/renovate-config:js-package"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
       "customType": "regex",
       "description": "Update action versions in scaffolded workflow",
