@@ -20,7 +20,7 @@
     {
       "semanticCommitType": "fix",
       "matchManagers": [
-        "regex"
+        "custom.regex"
       ],
       "matchDepTypes": [
         "github-actions"
