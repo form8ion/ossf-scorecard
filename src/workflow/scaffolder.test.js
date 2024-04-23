@@ -66,7 +66,7 @@ describe('workflow scaffolder', () => {
               },
               {
                 name: 'Upload to code-scanning',
-                uses: 'github/codeql-action/upload-sarif@v3.25.1',
+                uses: 'github/codeql-action/upload-sarif@v3.25.2',
                 with: {sarif_file: 'results.sarif'}
               }
             ]
