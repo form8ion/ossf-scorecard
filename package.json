@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "make-dir": "^4.0.0"
+    "make-dir": "^5.0.0"
   },
   "devDependencies": {
     "@cucumber/cucumber": "10.9.0",
