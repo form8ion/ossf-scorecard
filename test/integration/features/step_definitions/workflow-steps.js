@@ -1,11 +1,11 @@
+import {promises as fs} from 'node:fs';
 import {fileExists} from '@form8ion/core';
-import mkdir from 'make-dir';
 
 import {Given, Then} from '@cucumber/cucumber';
 import {assert} from 'chai';
 
 Given('Actions workflows exist', async function () {
-  await mkdir(`${this.projectRoot}/.github/workflows`);
+  await fs.mkdir(`${this.projectRoot}/.github/workflows`, {recursive: true});
 });
 
 Given('no Actions workflows exist', async function () {
