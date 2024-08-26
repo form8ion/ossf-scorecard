@@ -50,8 +50,8 @@
     "provenance": true
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "make-dir": "^4.0.0"
+    "@form8ion/github-workflows-core": "^5.1.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@cucumber/cucumber": "10.9.0",

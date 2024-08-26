@@ -1,11 +1,13 @@
 import {promises as fs} from 'node:fs';
-import {dump} from 'js-yaml';
-import mkdir from 'make-dir';
+import {writeWorkflowFile} from '@form8ion/github-workflows-core';
 
 export default async function ({projectRoot}) {
-  await fs.writeFile(
-    `${await mkdir(`${projectRoot}/.github/workflows`)}/scorecard.yml`,
-    dump({
+  await fs.mkdir(`${projectRoot}/.github/workflows`, {recursive: true});
+
+  await writeWorkflowFile({
+    projectRoot,
+    name: 'scorecard',
+    config: {
       name: 'OpenSSF Scorecard',
       on: {
         // To guarantee Maintained check is occasionally updated.
@@ -56,6 +58,6 @@ export default async function ({projectRoot}) {
           ]
         }
       }
-    })
-  );
+    }
+  });
 }

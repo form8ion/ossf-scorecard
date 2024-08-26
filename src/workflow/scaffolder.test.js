@@ -1,16 +1,13 @@
 import {promises as fs} from 'node:fs';
-import jsYaml from 'js-yaml';
-import mkdir from 'make-dir';
+import {writeWorkflowFile} from '@form8ion/github-workflows-core';
 
-import {afterEach, expect, describe, it, vi} from 'vitest';
+import {afterEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
-import {when} from 'jest-when';
 
 import scaffold from './scaffolder.js';
 
 vi.mock('node:fs');
-vi.mock('js-yaml');
-vi.mock('make-dir');
+vi.mock('@form8ion/github-workflows-core');
 
 describe('workflow scaffolder', () => {
   const projectRoot = any.string();
@@ -20,12 +17,13 @@ describe('workflow scaffolder', () => {
   });
 
   it('should scaffold the scorecard workflow', async () => {
-    const dumpedYaml = any.string();
-    const pathToCreatedWorkflowsDirectory = any.string();
+    await scaffold({projectRoot});
 
-    when(mkdir).calledWith(`${projectRoot}/.github/workflows`).mockResolvedValue(pathToCreatedWorkflowsDirectory);
-    when(jsYaml.dump)
-      .calledWith({
+    expect(fs.mkdir).toHaveBeenCalledWith(`${projectRoot}/.github/workflows`, {recursive: true});
+    expect(writeWorkflowFile).toHaveBeenCalledWith({
+      projectRoot,
+      name: 'scorecard',
+      config: {
         name: 'OpenSSF Scorecard',
         on: {
           schedule: [{cron: '31 2 * * 1'}],
@@ -72,11 +70,7 @@ describe('workflow scaffolder', () => {
             ]
           }
         }
-      })
-      .mockReturnValue(dumpedYaml);
-
-    await scaffold({projectRoot});
-
-    expect(fs.writeFile).toHaveBeenCalledWith(`${pathToCreatedWorkflowsDirectory}/scorecard.yml`, dumpedYaml);
+      }
+    });
   });
 });
