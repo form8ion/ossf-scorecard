@@ -29,7 +29,7 @@ export default async function ({projectRoot}) {
           steps: [
             {
               name: 'Checkout code',
-              uses: 'actions/checkout@v4.2.1',
+              uses: 'actions/checkout@v4.2.2',
               with: {'persist-credentials': false}
             },
             {
