@@ -7,8 +7,8 @@
     {
       "customType": "regex",
       "description": "Update action versions in scaffolded workflow",
-      "fileMatch": [
-        "^src/workflow/.+\\.js$"
+      "managerFilePatterns": [
+        "/^src/workflow/.+\\.js$/"
       ],
       "matchStrings": [
         "\\suses: '(?<depName>.*?)@(?<currentValue>.*?)'"
