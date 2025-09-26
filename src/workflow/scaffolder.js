@@ -52,7 +52,7 @@ export default async function ({projectRoot}) {
             },
             {
               name: 'Upload to code-scanning',
-              uses: 'github/codeql-action/upload-sarif@v3.30.3',
+              uses: 'github/codeql-action/upload-sarif@v3.30.4',
               with: {sarif_file: 'results.sarif'}
             }
           ]
