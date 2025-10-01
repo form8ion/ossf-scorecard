@@ -34,7 +34,7 @@ export default async function ({projectRoot}) {
             },
             {
               name: 'Run analysis',
-              uses: 'ossf/scorecard-action@v2.4.2',
+              uses: 'ossf/scorecard-action@v2.4.3',
               with: {
                 results_file: 'results.sarif',
                 results_format: 'sarif',
