@@ -43,7 +43,7 @@ export default async function ({projectRoot}) {
             },
             {
               name: 'Upload artifact',
-              uses: 'actions/upload-artifact@v6',
+              uses: 'actions/upload-artifact@v7',
               with: {
                 name: 'SARIF file',
                 path: 'results.sarif',
